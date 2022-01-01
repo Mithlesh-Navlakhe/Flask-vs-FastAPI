@@ -96,10 +96,16 @@ By using Swagger UI, you can easily test your API endpoints and specifying the p
 Other than Swagger UI, FastAPI also comes with another documentation — “ReDoc”. The documentation consists of all the endpoints listed which is useful if you are having many endpoints deployed in the same service. To access the documentation page enter the API endpoint /redoc.
 
 Comparison of Flask and FastAPI:
-HTTP Methods:
+
+HTTP Methods : 
+
+![HTTP Methods](https://github.com/Mithlesh-Navlakhe/Flask-vs-FastAPI/blob/main/1_eG7Xz7J22Cvyt90RyE6C7g.png)
 
 To specify a “GET” or “POST” method is different in Flask and FastAPI.
+
 Passing Parameter & Data Validation :
+
+![HTTP Methods](https://github.com/Mithlesh-Navlakhe/Flask-vs-FastAPI/blob/main/1_5vpbnDfgLPKzem5yUAGLVw.png)
 
 Flask does not provide validation on the data format which means the user can pass any type of data such as string or integer etc. (Alternatively, a validation script on the input data receive can be built into the script, but this will require additional effort)
 
