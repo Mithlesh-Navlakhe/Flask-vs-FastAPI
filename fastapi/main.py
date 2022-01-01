@@ -1,5 +1,13 @@
 
 #installation steps
+#virtualenv envname
+#activate environment .\envname\Scripts\activate
+#pip install 'fastapi[all]'
+#pip freeze requirements.txt
+#pip freeze > requirements.txt
+#create main.py
+#uvicorn main:app --reload
+
 
 from fastapi import FastAPI 
 from pydantic import BaseModel
