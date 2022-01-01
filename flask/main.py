@@ -1,10 +1,10 @@
 #installation steps
 #virtualenv envname
 #activate environment .\envname\Scripts\activate
+#pip install flask flask-restx
 #pip freeze requirements.txt
 #pip freeze > requirements.txt
 #create main.py
-#pip install flask flask-restx
 #python main.py
 # Using flask to make an api
 # import necessary libraries and functions
