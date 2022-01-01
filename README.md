@@ -20,50 +20,19 @@ A good thing to highlight for FastAPI is the documentation. Upon deploying with 
 
 Below is an example of deploying using FastAPI (This is an example of using a ‘GET’ method to get user inputs and insert the values into Google Big Query — this example is deployed on Google Cloud Run)
 
-'''
-
-import uvicorn
-from fastapi import FastAPI
-import pandas as pd
-import gcsfs
-from google.cloud import bigquery
-from google.oauth2 import service_account
-import pandas_gbq
-import os
-
-app = FastAPI()
-
-@app.get("/books_title/{book_title}/author/{author}")
-async def books_table_update(books_title: str, author: str ):
-    
-    Title = books_title
-    Author = author
-
-    input_table = {'book_title':[Title],'book_author':[Author]}
-    input_table = pd.DataFrame(input_table)
-    input_table["book_title"]= input_table["book_title"].map(str)
-    input_table["book_author"]= input_table["book_author"].map(str)
-    
-    #Push table to Google Big Query
-
-    client = bigquery.Client()
-    project_id = 'sue-gcp-learning-env'
-    table_id = 'Books.books_title_author'
-    pandas_gbq.to_gbq(input_table, table_id, project_id=project_id, if_exists='replace')
-    
-    return "Table books_title_author has been Updated"
-
-'''
+![HTTP Methods](https://github.com/Mithlesh-Navlakhe/Flask-vs-FastAPI/blob/main/Asset/Snap027.png)
 
 Upon finish deploying with Flask, you can run the URL and pass the input in the URL and a message will be returned which works similarly to Flask.
-
-# image
 
 Now, this is the additional function from FastAPI that really makes me excited which is the automated generated docs (Swagger UI). To access the Swagger UI enter the API endpoint /docs and there you go — an interactive GUI to test your API endpoints. Having a Swagger UI makes it easier to explain your program to others as well.
 
 By using Swagger UI, you can easily test your API endpoints and specifying the parameters via the interface. For example, in the image below, you can easily specify the “Book Title” and “Author” in the column provided.
 
+![HTTP Methods](https://github.com/Mithlesh-Navlakhe/Flask-vs-FastAPI/blob/main/Asset/Snap028.png)
+
 Other than Swagger UI, FastAPI also comes with another documentation — “ReDoc”. The documentation consists of all the endpoints listed which is useful if you are having many endpoints deployed in the same service. To access the documentation page enter the API endpoint /redoc.
+
+![HTTP Methods](https://github.com/Mithlesh-Navlakhe/Flask-vs-FastAPI/blob/main/Asset/Snap029.png)
 
 Comparison of Flask and FastAPI:
 
@@ -80,10 +49,6 @@ To specify a “GET” or “POST” method is different in Flask and FastAPI.
 Flask does not provide validation on the data format which means the user can pass any type of data such as string or integer etc. (Alternatively, a validation script on the input data receive can be built into the script, but this will require additional effort)
 
 FastAPI allows developers to declare additional criteria and validation on the parameter received.
-
-# Error Messages Display:
-
-The error messages display in Flask are HTML pages by default where else in FastAPI the error messages displayed are in JSON format.
 
 # Asynchronous Tasks:
 
