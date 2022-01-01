@@ -1,14 +1,14 @@
 # Flask-vs-FastAPI
 Understanding Flask vs FastAPI Web Framework. A comparison of two different RestAPI frameworks.
 
-# Introduction
-Being a Data Scientist does not end with Model Building, but working towards the next step, Model Deployment. Model Deployment is important to show your final results to others (or it could be your clients). This group of people might not understand coding and won’t understand by viewing your codes; they would prefer to view the final application, allowing them to view the results immediately. A common approach is to wrap your codes in a RestAPI and deploy them as a microservice.
+# IntroductionIn 
+Flask is a popular micro framework for building web applications. Since it is a micro-framework, it is very easy to use and lacks most of the advanced functionality which is found in a full-fledged framework. Therefore, building a REST API in Flask is very simple.
 
 In this blog, I will introduce two different frameworks that can quickly set up web servers: Flask and FastAPI. Both Flask and FastAPI are frameworks that are used for building small-scale websites and applications.
 
 # Flask Framework
 Flask was released in 2010, a micro web framework written in python to support the deployment of web applications with a minimal amount of code. It is designed to be an easy setup, flexible and fast to deploy as a microservice. Flask is built on WSGI (Python Web Server Gateway Interface) whereby the server will tie up a worker for each request.
-Below is an example of deploying using Flask (This is an example of using a ‘GET’ method to get user inputs and insert the values into Google Big Query — this example is deployed on Google Cloud Run)
+Below is an example of deploying using Flask (This is an example of using a ‘GET’ method to get user inputs and return the sqaure of the input value)
 
 ![HTTP Methods](https://github.com/Mithlesh-Navlakhe/Flask-vs-FastAPI/blob/main/Asset/Snap026.png)
 
